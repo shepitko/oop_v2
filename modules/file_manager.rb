@@ -5,8 +5,8 @@ module FileManager
     end
   end
 
-  def save_data
-
+  def save_data obj 
+		File.open("db/#{obj}s.json","w"){ |f| f.puts JSON.pretty_generate(obj.to_json) }
   end
 
 end
