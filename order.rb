@@ -12,7 +12,10 @@ class Order
   def to_s
     "id:#{@id}, book_id:#{@book_id}, reader_id,:#{@reader_id}, date:#{@date}" 
   end
+
+  def to_hash
+  	hash = {}
+  	instance_variables.each{|var| hash[var.to_s.delete('@')] = instance_variable_get(var) }
+  	hash
+  end
 end
-
-
-#order.create("sasdasda", "asdsaasd", "asdasd")

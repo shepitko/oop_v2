@@ -10,4 +10,10 @@ class Book
   def to_s
     "id:#{@id}, title:#{@title}, author_id:#{@author_id}"
   end
+
+  def to_hash
+  	hash = {}
+  	instance_variables.each{|var| hash[var.to_s.delete('@')] = instance_variable_get(var) }
+  	hash
+  end
 end

@@ -1,56 +1,58 @@
-[{
-	"id":"1",
-  "name": "Piter Penin",
-  "email": "one@mail.com",
-  "city": "Dnipropetrovsk",
-  "street": "kirova",
-  "house": "52"
-},
-{
-	"id":"2",
-  "name": "Rudolf Hedy",
-  "email": "two@mail.com",
-  "city": "Muhoshits",
-  "street": "CC",
-  "house": "77"
-},
-{
-	"id":"3",    	
-  "name": "Max Crazyv",
-  "email": "three@mail.com",
-  "city": "DnDz",
-  "street": "Kima",
-  "house": "25"
-},
-{
-	"id":"4",
-  "name": "Jimmy Lock",
-  "email": "four@mail.com",
-  "city": "Best City",
-  "street": "unlock",
-  "house": "41"
-},
-{
-	"id":"5",
-  "name": "Vc Collum Jerald",
-  "email": "five@mail.com",
-  "city": "Kharkiv",
-  "street": "Independence Day",
-  "house": "11"
-},
-{
-	"id":"6",
-  "name": "Other Name",
-  "email": "siz@mail.com",
-  "city": "Burkiv",
-  "street": "Berloga",
-  "house": "1"
-},
-{
-	"id":"7",
-  "name": "Under WOrld",
-  "email": "seven@mail.com",
-  "city": "Odessa",
-  "street": "Tauncher",
-  "house": "73"
-}]
+[
+  {
+    "id": "1",
+    "name": "Piter Penin",
+    "email": "one@mail.com",
+    "city": "Dnipropetrovsk",
+    "street": "kirova",
+    "house": "52"
+  },
+  {
+    "id": "2",
+    "name": "Rudolf Hedy",
+    "email": "two@mail.com",
+    "city": "Muhoshits",
+    "street": "CC",
+    "house": "77"
+  },
+  {
+    "id": "3",
+    "name": "Max Crazyv",
+    "email": "three@mail.com",
+    "city": "DnDz",
+    "street": "Kima",
+    "house": "25"
+  },
+  {
+    "id": "4",
+    "name": "Jimmy Lock",
+    "email": "four@mail.com",
+    "city": "Best City",
+    "street": "unlock",
+    "house": "41"
+  },
+  {
+    "id": "5",
+    "name": "Vc Collum Jerald",
+    "email": "five@mail.com",
+    "city": "Kharkiv",
+    "street": "Independence Day",
+    "house": "11"
+  },
+  {
+    "id": "6",
+    "name": "Other Name",
+    "email": "siz@mail.com",
+    "city": "Burkiv",
+    "street": "Berloga",
+    "house": "1"
+  },
+  {
+    "id": "7",
+    "name": "Under WOrld",
+    "email": "seven@mail.com",
+    "city": "Odessa",
+    "street": "Tauncher",
+    "house": "73"
+  }
+]

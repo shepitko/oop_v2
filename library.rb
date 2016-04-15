@@ -2,18 +2,19 @@ require './book.rb'
 require './order.rb'
 require './reader.rb'
 require './author.rb'
-require './file_manager.rb'
-require './helper.rb'
+require './modules/file_manager.rb'
+require './modules/helper.rb'
 
 class Library
 
   require 'json'
+
   include FileManager
   include Helper
 
   attr_accessor :books, :orders, :readers, :authors
 
-  NAMES = ['book', 'order', 'reader', 'author' ]
+  NAMES = %w{book order reader author}
 
   def initialize
     @books, @orders, @readers, @authors = [], [], [], []
@@ -35,18 +36,22 @@ class Library
   end
 
   def add_object(obj)
-    case obj.class
-    when Book
-      @books << obj
-    when Reader
-      @readers << obj
-    when Author
-      @authors << obj
-    when Order
-      @orders << obj
-    else
-      puts"Object not found"
+    case 
+    when obj.is_a?(Book) then @books << obj
+    when obj.is_a?(Reader) then @readers << obj
+    when obj.is_a?(Author) then @authors << obj
+    when obj.is_a?(Order) then @orders << obj
+    else puts"Object not found"
     end 
+  end
+
+  def save_library
+    NAMES.each do |name|
+      obj_to_hash = instance_variable_get("@#{name}s").map{ |v| v.to_hash }
+      File.open("db/#{name}s.json","w") do |f| 
+        f.puts JSON.pretty_generate(obj_to_hash)
+      end
+    end
   end
 
   private
@@ -69,15 +74,14 @@ class Library
     end
     people.size
   end
-
-  def save_library
-     NAMES.each{ |name| save_data(name) }
-  end
-
   
 end
 
 library = Library.new
-library.get_all
 library.statistic
-library.add_object(Book.new({"id":"10","title":"asdasda", "author_id":"222"}));
+library.add_object(Book.new({"id":"10","title":"asdasda", "author_id":"2"}))
+library.get_all
+library.save_library
+
+
+#поиск по ключу, добвление с обїектом

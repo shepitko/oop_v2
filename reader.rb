@@ -10,4 +10,10 @@ class Reader
   def to_s
     "id:#{@id}, name:#{@name}, email:#{@email}, city:#{@city}, street:#{@street}, house:#{@house}" 
   end
+
+  def to_hash
+  	hash = {}
+  	instance_variables.each{|var| hash[var.to_s.delete('@')] = instance_variable_get(var) }
+  	hash
+  end
 end
