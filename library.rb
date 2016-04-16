@@ -8,6 +8,7 @@ require './modules/helper.rb'
 class Library
 
   require 'json'
+  require 'pp'
 
   include FileManager
   include Helper
@@ -59,13 +60,10 @@ class Library
   end
 
   def one_of_three
-    three_popular_books = count_obj_value(@orders, "book_id").sort{|a1,a2| a2[1]<=>a1[1]}[0..2]
-    people = count_obj_value(@orders, "reader_id")
-    people.each{ |k, v| people[k] = 0;}
-    @orders.each do |v| 
-      three_popular_books.each{ |value| people[v.reader_id] += 1 if value[0] == v.book_id }
-    end
-    people.size
+    people = Array.new
+    group_books = @orders.map{ |order| order.to_hash }.group_by{|h| h["book_id"]}.values[0..2]
+    group_books.each{|val| val.each{|reader| people << reader["reader_id"]}}
+    people.uniq.size
   end
   
 end
@@ -75,6 +73,3 @@ library.statistic
 library.add_object(Book.new({"id":"10","title":"asdasda", "author_id":"2"}))
 library.get_all
 library.save_library
-
-
-#поиск по ключу, добвление с обїектом

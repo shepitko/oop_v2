@@ -10,6 +10,6 @@ module Helper
   end
 
   def max_value(obj, id)
-    obj_id = count_obj_value(obj, id).max_by{|k,v| v}[0] 
+    count_obj_value(obj, id).max_by{|k,v| v}[0] 
   end
 end
