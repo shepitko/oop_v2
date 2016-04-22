@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "book_ida": "2",
+    "book_id": null,
     "reader_id": "1",
     "date": "2014-03-22"
   },

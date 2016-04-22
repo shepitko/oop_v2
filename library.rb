@@ -60,10 +60,8 @@ class Library
   end
 
   def one_of_three
-    people = Array.new
-    group_books = @orders.map{ |order| order.to_hash }.group_by{|h| h["book_id"]}.values[0..2]
-    group_books.each{|val| val.each{|reader| people << reader["reader_id"]}}
-    people.uniq.size
+    group_books = @orders.map{ |order| order.to_hash }.group_by{|h| h["book_id"]}.values[0..2].flatten!
+    group_books.map{|h| h["reader_id"]}.uniq.size
   end
   
 end
